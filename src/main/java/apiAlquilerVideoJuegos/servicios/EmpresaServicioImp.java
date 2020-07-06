@@ -29,8 +29,8 @@ public class EmpresaServicioImp implements EmpresaServicio {
 		}
 		
 	@Override
-	public List obtener() {
-		List lista = new ArrayList();
+	public List<Empresa> obtener() {
+		List<Empresa> lista = new ArrayList<Empresa>();
 		empresaBD.findAll().forEach(e -> lista.add(e));
 		return lista;
 	}

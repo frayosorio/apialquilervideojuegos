@@ -2,14 +2,15 @@
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="APIAlquilerVideoJuegos">
 		<class>apiAlquilerVideoJuegos.modelos.Alquiler</class>
+		<class>apiAlquilerVideoJuegos.modelos.AlquilerB</class>
 		<class>apiAlquilerVideoJuegos.modelos.Ciudad</class>
 		<class>apiAlquilerVideoJuegos.modelos.Empresa</class>
 		<class>apiAlquilerVideoJuegos.modelos.Inventario</class>
+		<class>apiAlquilerVideoJuegos.modelos.Pais</class>
 		<class>apiAlquilerVideoJuegos.modelos.Region</class>
 		<class>apiAlquilerVideoJuegos.modelos.Tecnologia</class>
 		<class>apiAlquilerVideoJuegos.modelos.Tercero</class>
 		<class>apiAlquilerVideoJuegos.modelos.Tipodocumento</class>
-		<class>apiAlquilerVideoJuegos.modelos.Pais</class>
 		<class>apiAlquilerVideoJuegos.modelos.Titulo</class>
 	</persistence-unit>
 </persistence>

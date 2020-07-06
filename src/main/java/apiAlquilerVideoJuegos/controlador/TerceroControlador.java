@@ -19,7 +19,7 @@ import apiAlquilerVideoJuegos.servicios.TerceroServicio;
 @Controller
 @ResponseBody
 @RequestMapping(value = "/tercero")
-@Api(value = "onlinestore", description = "Operaciones sobre los terceros(clientes) de la tienda de videojuegos")
+@Api(value = "onlinestore", description = "Operaciones sobre los terceros (clientes) de la tienda de videojuegos")
 @Validated
 public class TerceroControlador {
 
@@ -36,7 +36,7 @@ public class TerceroControlador {
 	}
 
 	// Listar todos los Terceros
-	@ApiOperation(value = "Listar los títulos de la tienda", response = List.class)
+	@ApiOperation(value = "Listar los terceros de la tienda", response = List.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Lista cargada con exito"),
 			@ApiResponse(code = 401, message = "No tiene autorización para el recurso"),
 			@ApiResponse(code = 403, message = "Recurso prohibido"),
@@ -58,7 +58,7 @@ public class TerceroControlador {
 		if (terceroServicio.guardar(tercero)) {
 			return new ResponseEntity("Tercero agregado con éxito", HttpStatus.OK);
 		} else {
-			return new ResponseEntity("No se pudo agregar la Tercero", HttpStatus.NOT_ACCEPTABLE);
+			return new ResponseEntity("No se pudo agregar el Tercero", HttpStatus.NOT_ACCEPTABLE);
 		}
 	}
 
@@ -74,7 +74,7 @@ public class TerceroControlador {
 		if (terceroServicio.eliminar(id)) {
 			return new ResponseEntity("Tercero eliminado con éxito", HttpStatus.OK);
 		} else {
-			return new ResponseEntity("No se pudo eliminar la Tercero", HttpStatus.NOT_ACCEPTABLE);
+			return new ResponseEntity("No se pudo eliminar el Tercero", HttpStatus.NOT_ACCEPTABLE);
 		}
 	}
 

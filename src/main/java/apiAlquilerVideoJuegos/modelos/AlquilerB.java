@@ -1,51 +1,39 @@
 package apiAlquilerVideoJuegos.modelos;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.Date;
 
-/**
- * The persistent class for the alquiler database table.
- * 
- */
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @Entity
-@NamedQuery(name = "Alquiler.findAll", query = "SELECT a FROM Alquiler a")
-public class Alquiler implements Serializable {
+public class AlquilerB implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	private int id;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechadevolucion;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaprestamo;
 
 	private int plazo;
 
 	private float precio;
 
-	/*
-	 * //bi-directional many-to-one association to Inventario
-	 * 
-	 * @ManyToOne
-	 * 
-	 * @JoinColumn(name="IdInventario") private Inventario inventario;
-	 */
-
 	private int idinventario;
-	/*
-	 * //bi-directional many-to-one association to Tercero
-	 * 
-	 * @ManyToOne
-	 * 
-	 * @JoinColumn(name="IdTercero") private Tercero tercero;
-	 */
 
 	private int idtercero;
 
-	public Alquiler() {
+	private int consecutivo;
+
+	private String tecnologia;
+
+	private String titulo;
+
+	private String cliente;
+
+	public AlquilerB() {
 	}
 
 	public int getId() {
@@ -88,13 +76,6 @@ public class Alquiler implements Serializable {
 		this.precio = precio;
 	}
 
-	/*
-	 * public Inventario getInventario() { return this.inventario; }
-	 * 
-	 * public void setInventario(Inventario inventario) { this.inventario =
-	 * inventario; }
-	 */
-
 	public int getIdinventario() {
 		return this.idinventario;
 	}
@@ -103,12 +84,6 @@ public class Alquiler implements Serializable {
 		this.idinventario = idinventario;
 	}
 
-	/*
-	 * public Tercero getTercero() { return this.tercero; }
-	 * 
-	 * public void setTercero(Tercero tercero) { this.tercero = tercero; }
-	 */
-
 	public int getIdtercero() {
 		return this.idtercero;
 	}
@@ -116,4 +91,37 @@ public class Alquiler implements Serializable {
 	public void setIdtercero(int idtercero) {
 		this.idtercero = idtercero;
 	}
+
+	public int getConsecutivo() {
+		return this.consecutivo;
+	}
+
+	public void setConsecutivo(int consecutivo) {
+		this.consecutivo = consecutivo;
+	}
+
+	public String getTecnologia() {
+		return this.tecnologia;
+	}
+
+	public void setTecnologia(String tecnologia) {
+		this.tecnologia = tecnologia;
+	}
+
+	public String getTitulo() {
+		return this.titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getCliente() {
+		return this.cliente;
+	}
+
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
+	}
+
 }

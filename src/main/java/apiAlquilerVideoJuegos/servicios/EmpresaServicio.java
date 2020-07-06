@@ -5,9 +5,12 @@ import apiAlquilerVideoJuegos.modelos.Empresa;
 
 public interface EmpresaServicio {
 
-	public List obtener();
+	public List<Empresa> obtener();
+
 	public Empresa obtenerEmpresa(Long id);
+
 	public boolean guardar(Empresa empresa);
+
 	public boolean eliminar(Long id);
 
 }

@@ -2,7 +2,6 @@ package apiAlquilerVideoJuegos.modelos;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * The persistent class for the titulo database table.
@@ -27,12 +26,14 @@ public class Titulo implements Serializable {
 	private String productor;
 
 	private String protagonistas;
-	
+
 	private int idempresa;
 
-	// bi-directional many-to-one association to Inventario
-	@OneToMany(mappedBy = "titulo")
-	private List<Inventario> inventarios;
+	/*
+	 * // bi-directional many-to-one association to Inventario
+	 * 
+	 * @OneToMany(mappedBy = "titulo") private List<Inventario> inventarios;
+	 */
 
 	/*
 	 * //bi-directional many-to-one association to Empresa
@@ -41,7 +42,6 @@ public class Titulo implements Serializable {
 	 * 
 	 * @JoinColumn(name="IdEmpresa") private Empresa empresa;
 	 */
-	
 
 	public Titulo() {
 	}
@@ -102,27 +102,22 @@ public class Titulo implements Serializable {
 		this.protagonistas = protagonistas;
 	}
 
-	public List<Inventario> getInventarios() {
-		return this.inventarios;
-	}
-
-	public void setInventarios(List<Inventario> inventarios) {
-		this.inventarios = inventarios;
-	}
-
-	public Inventario addInventario(Inventario inventario) {
-		getInventarios().add(inventario);
-		inventario.setTitulo(this);
-
-		return inventario;
-	}
-
-	public Inventario removeInventario(Inventario inventario) {
-		getInventarios().remove(inventario);
-		inventario.setTitulo(null);
-
-		return inventario;
-	}
+	/*
+	 * public List<Inventario> getInventarios() { return this.inventarios; }
+	 * 
+	 * public void setInventarios(List<Inventario> inventarios) { this.inventarios =
+	 * inventarios; }
+	 * 
+	 * public Inventario addInventario(Inventario inventario) {
+	 * getInventarios().add(inventario); inventario.setTitulo(this);
+	 * 
+	 * return inventario; }
+	 * 
+	 * public Inventario removeInventario(Inventario inventario) {
+	 * getInventarios().remove(inventario); inventario.setTitulo(null);
+	 * 
+	 * return inventario; }
+	 */
 
 	/*
 	 * public Empresa getEmpresa() { return this.empresa; }
